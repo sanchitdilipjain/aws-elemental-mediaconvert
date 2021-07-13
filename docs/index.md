@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+## AWS Elemental Mediaconvert
 
-You can use the [editor on GitHub](https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+**Introduction**
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- AWS Elemental MediaConvert is a file-based video transcoding service with broadcast-grade functionality. It offers to easily generate on-demand video (VOD) content for transmit and multiscreen distribution at a larger scale. 
+- The service concat advanced video and audio functionality via an UI with pay-as-you-go pricing. This service also allow on delivering compelling media experiences without having to worry about the criticality of building and operating your own video processing infrastructure.
+- Below are the different features of AWS Elemental Mediaconvert
 
-### Markdown
+  - Broadcast Capabilities for Video-on-Demand Content
+  
+  - Comprehensive Input and Output Support
+  
+  - Automated Resource Provisioning
+  
+  - Built-in Reliability
+  
+  - Pay-as-you-go pricing
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+**MediaConvert components**
 
-```markdown
-Syntax highlighted code block
+  - Jobs: A job performs the task of transcoding. When we configure a job, specify the name of the file that we want to transcode, the name we want MediaConvert to provide to the finished output files, and other configuration
 
-# Header 1
-## Header 2
-### Header 3
+  - Queues: A queue provide to control the resources that are available to the AWS account for parallel processing
 
-- Bulleted
-- List
+  - Presets: A preset is a persisted group of encoding configurations for an output. We can create many such outputs by simply choosing a system preset
 
-1. Numbered
-2. List
+  - Job templates: A job template cpntains all the configurations for an end to end job, excluding IAM role and settings like the input file location and name, and user metadata that we might tag the job with.
 
-**Bold** and _Italic_ and `Code` text
+**Demo**
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- Now we will learn how to leverage MediaConvert to configure jobs using AWS Lambda in an automation fashion
