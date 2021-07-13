@@ -29,3 +29,14 @@
 **Demo**
 
 - Now we will learn how to leverage MediaConvert to configure jobs using AWS Lambda in an automation fashion
+
+  <img src="images/image1.png" class="inline" width="500" height="200"/>
+
+- Steps to implement to MediaConvert jobs
+
+  - Create IAM role
+
+  - Creare AWS Lambda function
+
+  - Test AWS Lambda function 
+
