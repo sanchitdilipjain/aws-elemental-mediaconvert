@@ -34,9 +34,9 @@
 
 - Steps to implement to MediaConvert jobs
 
-  - Create IAM role
+  - Prerequisite 
+  
+  - Execution via AWS console
 
-  - Creare AWS Lambda function
-
-  - Test AWS Lambda function 
+  - Automatation via AWS Lambda
 
