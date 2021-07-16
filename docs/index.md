@@ -34,9 +34,17 @@
 
 - Steps to implement to MediaConvert jobs
 
-  - Prerequisite 
-  
-  - Execution via AWS console
+  - Step 1: Prerequisite  
 
-  - Automatation via AWS Lambda
+    -  Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/prerequisite-cft.json">cloudformation template</a> from this link and Deploy it
+
+    -  Once the Cloudformation stack is deployed successfully please capture the values for BucketName, IAMRoleForLambda and IAMRoleForMediaConvert from the Output Section of stack
+
+        <img src="images/image2.png" class="inline" width="700" height="200"/> 
+    
+    -  Download the <a href="https://github.com/sanchitdilipjain/aws-glue-studio/blob/main/dataset.csv">dataset</a> from this link and upload it to the S3 bucket
+  
+  - Step 2: Execution via AWS console
+
+  - Step 3: Automatation via AWS Lambda
 
