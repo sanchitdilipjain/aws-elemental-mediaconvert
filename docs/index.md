@@ -42,7 +42,9 @@
        
         <p align="center"><img src="images/image2.png" class="inline" width="700" height="250"/></p>
         
-    -  Download the <a href="https://github.com/sanchitdilipjain/aws-glue-studio/blob/main/dataset.csv">dataset</a> from this link and upload it to the S3 bucket
+    -  Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/sample-audio/sample-audio.m2ts">Sample Audio</a> from this link and upload it to the S3 bucket
+    
+    -  Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/job_template.json">MediaConvert Job Template</a> from this link
   
   - Step 2: Execution via AWS console
 
