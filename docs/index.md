@@ -30,7 +30,7 @@
 
 - Now we will learn how to leverage MediaConvert to configure jobs using AWS Lambda in an automation fashion
 
-  <img src="images/image1.png" class="inline" width="500" height="200"/>
+  <p align="center"><img src="images/image1.png" class="inline" width="500" height="200"/></p>
 
 - Steps to implement to MediaConvert jobs
 
@@ -39,9 +39,9 @@
     -  Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/prerequisite-cft.json">cloudformation template</a> from this link and Deploy it
 
     -  Once the Cloudformation stack is deployed successfully please capture the values for BucketName, IAMRoleForLambda and IAMRoleForMediaConvert from the Output Section of stack
-
-        <img src="images/image2.png" class="inline" width="700" height="200"/> 
-    
+       
+        <p align="center"><img src="images/image2.png" class="inline" width="700" height="250"/></p>
+        
     -  Download the <a href="https://github.com/sanchitdilipjain/aws-glue-studio/blob/main/dataset.csv">dataset</a> from this link and upload it to the S3 bucket
   
   - Step 2: Execution via AWS console
