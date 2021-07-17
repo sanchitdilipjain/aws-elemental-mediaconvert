@@ -30,7 +30,9 @@
 
 - Now we will learn how to leverage MediaConvert to configure jobs using AWS Lambda in an automation fashion
 
-  <p align="center"><img src="images/image1.png" class="inline" width="500" height="200"/></p>
+  <p align="center">
+  <img src="images/image1.png" class="inline" width="500" height="200"/>
+  </p>
 
 - Steps to implement to MediaConvert jobs
 
