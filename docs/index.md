@@ -2,8 +2,8 @@
 
 **Introduction**
 
-- AWS Elemental MediaConvert is a file-based video transcoding service with broadcast-grade functionality. It offers to easily generate on-demand video (VOD) content for transmit and multiscreen distribution at a larger scale. 
-- The service concat advanced video and audio functionality via an UI with pay-as-you-go pricing. This service also allow on delivering compelling media experiences without having to worry about the criticality of building and operating your own video processing infrastructure.
+- AWS Elemental MediaConvert is a file-based video transcoding service with broadcast-grade functionality. It offers to easily generate on-demand video (VOD) content for transmitting and multiscreen distribution at a larger scale. 
+- The service merges advanced video and audio functionality via a UI with pay-as-you-go pricing. This service also allows for delivering compelling media experiences without having to worry about the criticality of building and operating your own video processing infrastructure.
 - Below are the different features of AWS Elemental Mediaconvert
 
   - Broadcast Capabilities for Video-on-Demand Content
@@ -24,7 +24,7 @@
 
   - Presets: A preset is a persisted group of encoding configurations for an output. We can create many such outputs by simply choosing a system preset
 
-  - Job templates: A job template cpntains all the configurations for an end to end job, excluding IAM role and settings like the input file location and name, and user metadata that we might tag the job with.
+  - Job templates: A job template contains all the configurations for an end-to-end job, excluding IAM role and settings like the input file location and name, and user metadata that we might tag the job with.
 
 **Demo**
 
@@ -38,7 +38,7 @@
 
     -  Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/prerequisite-cft.json">cloudformation template</a> from this link and Deploy it
 
-    -  Once the Cloudformation stack is deployed successfully please capture the values for BucketName, IAMRoleForLambda and IAMRoleForMediaConvert from the Output Section of stack
+    -  Once the Cloudformation stack is deployed successfully please capture the values for BucketName, IAMRoleForLambda, and IAMRoleForMediaConvert from the Output Section of the stack
        
         <p align="center"><img src="images/image2.png" class="inline" width="700" height="250"/></p>
         
@@ -62,7 +62,7 @@
     
       <p align="center"><img src="images/image5.png" class="inline" width="500" height="300"/></p>
       
-    - Next provide name to the File group and provide a S3 output location. And leave the remaining settings as the default
+    - Next, provide a name to the File group and provide an S3 output location. And leave the remaining settings as the default
     
       <p align="center"><img src="images/image6.png" class="inline" width="700" height="250"/></p>
       
@@ -76,15 +76,15 @@
       
         <p align="center"><img src="images/image7.png" class="inline" width="700" height="250"/></p>
     
-    - Choose AWS Integration under Job settings section from the left navigation panel
+    - Choose the AWS Integration under Job settings section from the left navigation panel
     
       - Provide IAM role detail under the Service access
 
-      - Select Use an exisitng role and then select the role starting with mediaconvert-tutorial-xxx-xx 
+      - Select Use an existing role and then select the role starting with mediaconvert-tutorial-xxx-xx 
       
         <p align="center"><img src="images/image8.png" class="inline" width="600" height="200"/></p>
       
-        **Note:** This IAMRole should be same the IAMRoleForMediaConvert which we deloyed via Cloudformation stack under Prerequisite section
+        **Note:** This IAMRole should be the same as the IAMRoleForMediaConvert which we deployed via Cloudformation stack under the Prerequisite section
      
     - Finally, scroll to the bottom of the page and click Create
         
@@ -96,13 +96,13 @@
           
           <p align="center"><img src="images/image10.png" class="inline" width="700" height="350"/></p>
           
-     - Let's verify the output from the S3 location provide under output section  
+     - Let's verify the output from the S3 location provide under the output section  
      
           <p align="center"><img src="images/image11.png" class="inline" width="700" height="250"/></p>
           
           <p align="center"><img src="images/image12.png" class="inline" width="700" height="250"/></p>
  
-     - At last we will export the job as a json file from the Job summary console so we can execute the same via Lambda in an automated fashion
+     - At last, we will export the job as a json file from the Job summary console so we can execute the same via Lambda in an automated fashion
      
           <p align="center"><img src="images/image13.png" class="inline" width="700" height="250"/></p>
 
@@ -112,7 +112,7 @@
     
     - Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/MediConvert-Lambda.py">Lambda code for MediaConvert Job</a> from this link  
     
-    - Deploy Lambda with the code with the code we downloaded above and provide IAMRoleForLambda which we deloyed via Cloudformation stack under Prerequisite section
+    - Deploy Lambda from the code we downloaded above and provide IAMRoleForLambda which we deployed via Cloudformation stack under the Prerequisite section
       
       <p align="center"><img src="images/image14.png" class="inline" width="700" height="450"/></p>
       
@@ -120,7 +120,7 @@
       
       <p align="center"><img src="images/image16.png" class="inline" width="500" height="300"/></p>
     
-    - Now we will test the Lambda, choose S3 Put event from the list of sample and update S3 bucket and S3 key details. After changes in the event json save it.
+    - Now we will test the Lambda, choose the S3 Put event from the list of samples and update the S3 bucket and S3 key details. After changes in the event json save it.
     
       <p align="center"><img src="images/image17.png" class="inline" width="600" height="450"/></p>
     
