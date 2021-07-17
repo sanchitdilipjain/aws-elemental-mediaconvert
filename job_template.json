@@ -1,13 +1,8 @@
 {
-  "Queue": "arn:aws:mediaconvert:<aws-region>:<account-id>:queues/Default",
-  "UserMetadata": {},
-  "Role": "arn:aws:iam::<account-id>:role/<iam-role-name>",
-  "UserMetadata": {},
-  "Settings": {
-    "TimecodeConfig": {
+  "TimecodeConfig": {
       "Source": "ZEROBASED"
     },
-    "OutputGroups": [
+  "OutputGroups": [
       {
         "CustomName": "MP4",
         "Name": "File Group",
@@ -52,7 +47,7 @@
         }
       }
     ],
-    "Inputs": [
+  "Inputs": [
       {
         "AudioSelectors": {
           "Audio Selector 1": {
@@ -64,10 +59,4 @@
         "FileInput": "s3://mediaconvert-s3bucket-name/sample-audio.m2ts"
       }
     ]
-  },
-  "AccelerationSettings": {
-    "Mode": "DISABLED"
-  },
-  "StatusUpdateInterval": "SECONDS_60",
-  "Priority": 0
 }
