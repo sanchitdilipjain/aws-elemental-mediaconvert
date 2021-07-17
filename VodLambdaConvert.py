@@ -70,17 +70,13 @@ def update_job_settings(jobsettings,assetID,destinationBucket,S3HLS, S3MP4, S3Th
     :return:
     """
     LOGGER.info("Updating Job Settings...")
-    jobsettings['OutputGroups'][0]['OutputGroupSettings']['HlsGroupSettings']['Destination'] \
-    = destinationBucket + '/' + S3HLS
+    jobsettings['OutputGroups'][0]['OutputGroupSettings']['HlsGroupSettings']['Destination'] = destinationBucket + '/' + S3HLS
     
     #S3KeyPath = 'assets/SD/' + assetID + '/MP4/' + destinationBucket
-    jobsettings['OutputGroups'][1]['OutputGroupSettings']['FileGroupSettings']['Destination'] \
-    = destinationBucket + '/' + S3MP4
+    jobsettings['OutputGroups'][1]['OutputGroupSettings']['FileGroupSettings']['Destination'] = destinationBucket + '/' + S3MP4
     LOGGER.info(jobsettings['OutputGroups'][1]['OutputGroupSettings']['FileGroupSettings']['Destination'])
     
     #S3KeyThumbnails = 'assets/SD/' + assetID + '/Thumbnails/' + S3Thumb
-    jobsettings['OutputGroups'][2]['OutputGroupSettings']['FileGroupSettings']['Destination'] \
-    = destinationBucket + '/' + S3Thumb
+    jobsettings['OutputGroups'][2]['OutputGroupSettings']['FileGroupSettings']['Destination'] = destinationBucket + '/' + S3Thumb
     LOGGER.info(jobsettings['OutputGroups'][2]['OutputGroupSettings']['FileGroupSettings']['Destination'])
     LOGGER.info("Updated Job Settings...")
-{"mode":"full","isActive":false}
