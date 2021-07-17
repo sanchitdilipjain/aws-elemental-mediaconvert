@@ -47,36 +47,26 @@ def lambda_handler(event, context):
             jobSettings = json.load(json_data)
         jobSettings['Inputs'][0]['FileInput'] = sourceS3
      
-        basekey = 'assets/' 
-        S3KeyHLS = basekey + assetID +'/HLS/'+ sourceS3Basename
+        basekey = 'output/' 
         S3KeyPath = basekey + assetID + '/MP4/' + sourceS3Basename
-        S3KeyThumbnails = basekey + assetID + '/Thumbnails/' + sourceS3Basename
 
         LOGGER.info("Creating MediaConvert Job...") 
         #update job.json
-        update_job_settings(jobSettings,assetID,destinationS3,S3KeyHLS,S3KeyPath,S3KeyThumbnails)
+        update_job_settings(jobSettings,assetID,destinationS3,S3KeyPath)
         MEDIACONVERT.create_job(Role=mediaConvertRole, UserMetadata=jobMetadata, Settings=jobSettings)
 
-def update_job_settings(jobsettings,assetID,destinationBucket,S3HLS, S3MP4, S3Thumb):
+def update_job_settings(jobsettings,assetID,destinationBucket,S3MP4):
     """
     Update MediaConvert Job Settings
     
     :param jobsettings:         Loaded JobSettings JSON template
     :param assetID:             Tagged Metadata ID
     :param destinationBucket:   Bucket for Transcoded Media to reside
-    :param S3HLS                S3 path for HLS transcode files
     :param S3MP4                S3 path for Mp4 transcode files
-    :param S3Thunb              S3 path for generated thumbnail files
     :return:
     """
-    LOGGER.info("Updating Job Settings...")
-    jobsettings['OutputGroups'][0]['OutputGroupSettings']['HlsGroupSettings']['Destination'] = destinationBucket + '/' + S3HLS
-    
+    LOGGER.info("Updating Job Settings...")    
     #S3KeyPath = 'assets/SD/' + assetID + '/MP4/' + destinationBucket
     jobsettings['OutputGroups'][1]['OutputGroupSettings']['FileGroupSettings']['Destination'] = destinationBucket + '/' + S3MP4
     LOGGER.info(jobsettings['OutputGroups'][1]['OutputGroupSettings']['FileGroupSettings']['Destination'])
-    
-    #S3KeyThumbnails = 'assets/SD/' + assetID + '/Thumbnails/' + S3Thumb
-    jobsettings['OutputGroups'][2]['OutputGroupSettings']['FileGroupSettings']['Destination'] = destinationBucket + '/' + S3Thumb
-    LOGGER.info(jobsettings['OutputGroups'][2]['OutputGroupSettings']['FileGroupSettings']['Destination'])
     LOGGER.info("Updated Job Settings...")
