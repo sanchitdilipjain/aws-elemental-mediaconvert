@@ -109,7 +109,29 @@
   - Step 3: Automatation via AWS Lambda
   
     - Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/job_template.json">MediaConvert Job Template</a> from this link 
+      
+      **Note:** Update Queue and Role in the json. This Role should be same the IAMRoleForMediaConvert which we deloyed via Cloudformation stack under Prerequisite section
     
-    - Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/VodLambdaConvert.py">Lambda code for MediaConvert Job</a> from this link  
+    - Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/MediConvert-Lambda.py">Lambda code for MediaConvert Job</a> from this link  
     
-    - 
+    - Deploy Lambda with the code with the code we downloaded above and provide IAMRoleForLambda which we deloyed via Cloudformation stack under Prerequisite section
+      
+      <p align="center"><img src="images/image14.png" class="inline" width="700" height="450"/></p>
+      
+      <p align="center"><img src="images/image15.png" class="inline" width="700" height="450"/></p>
+      
+      <p align="center"><img src="images/image16.png" class="inline" width="500" height="300"/></p>
+    
+    - Now we will test the Lambda, choose S3 Put event from the list of sample and update S3 bucket and S3 key details. After changes in the event json save it.
+    
+      <p align="center"><img src="images/image17.png" class="inline" width="600" height="450"/></p>
+    
+    - Now click Test and provide event json we saved above and wait for the result
+    
+      - Lambda output
+        
+        <p align="center"><img src="images/image18.png" class="inline" width="700" height="250"/></p>
+      
+      - S3 bucket output
+      
+        <p align="center"><img src="images/image19.png" class="inline" width="700" height="250"/></p>
