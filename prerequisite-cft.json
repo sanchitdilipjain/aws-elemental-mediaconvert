@@ -20,7 +20,7 @@
           "PolicyName": "root",
           "PolicyDocument": {
             "Version": "2012-10-17",
-            "Statement": [{ "Action": [ "logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents" ], "Resource": "*", "Effect": "Allow", "Sid": "Logging" }, { "Action": [ "iam:PassRole" ], "Resource": [{ "Fn::GetAtt" : ["IAMRoleForMediaConvert", "Arn"] }], "Effect": "Allow", "Sid": "PassRole" }, { "Action": [ "mediaconvert:*" ], "Resource": [ "*" ], "Effect": "Allow", "Sid": "MediaConvertService" }]
+            "Statement": [{ "Action": [ "logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents" ], "Resource": "*", "Effect": "Allow", "Sid": "Logging" }, { "Action": [ "iam:PassRole" ], "Resource": "*", "Condition": {"StringLike": {"iam:PassedToService": ["mediaconvert.amazonaws.com"]}}, "Effect": "Allow", "Sid": "PassRole" }, { "Action": [ "mediaconvert:*" ], "Resource": [ "*" ], "Effect": "Allow", "Sid": "MediaConvertService" }]
           }
         }]
       }
