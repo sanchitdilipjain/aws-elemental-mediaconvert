@@ -43,10 +43,73 @@
         <p align="center"><img src="images/image2.png" class="inline" width="700" height="250"/></p>
         
     -  Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/sample-audio/sample-audio.m2ts">Sample Audio</a> from this link and upload it to the S3 bucket
-    
-    -  Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/job_template.json">MediaConvert Job Template</a> from this link
   
   - Step 2: Execution via AWS console
+  
+    - Open the AWS MediaConvert console at<a href="https://console.aws.amazon.com/mediaconvert/"> link </a>
+    
+    - Click on get started from the home page
+    
+    - Choose Input 1 from the left navigation panel under Inputs and provide Input file S3 location under Input 1
+      
+      <p align="center"><img src="images/image3.png" class="inline" width="700" height="150"/></p>
+      
+      <p align="center"><img src="images/image4.png" class="inline" width="700" height="250"/></p>
+    
+    - Choose Output Groups from the left navigation panel and click Add
+    
+    - Check the File group box then click on Select
+    
+      <p align="center"><img src="images/image5.png" class="inline" width="500" height="300"/></p>
+      
+    - Next provide name to the File group and provide a S3 output location. And leave the remaining settings as the default
+    
+      <p align="center"><img src="images/image6.png" class="inline" width="700" height="250"/></p>
+      
+    - Now click on H.264, AAC under Output section to provide Output configuration
+    
+      - Under the Encoding settings panel enter 1280 and 720 in the Resolution box (w x h)
+
+      - Ensure Rate control mode is selected to QVBR and enter 3000000 for the Max birate (bit/s)
+
+      - Leave all other settings for Output 1 as the default
+      
+        <p align="center"><img src="images/image7.png" class="inline" width="700" height="250"/></p>
+    
+    - Choose AWS Integration under Job settings section from the left navigation panel
+    
+      - Provide IAM role detail under the Service access
+
+      - Select Use an exisitng role and then select the role starting with mediaconvert-tutorial-xxx-xx 
+      
+        <p align="center"><img src="images/image8.png" class="inline" width="600" height="200"/></p>
+      
+        **Note:** This IAMRole should be same the IAMRoleForMediaConvert which we deloyed via Cloudformation stack under Prerequisite section
+     
+    - Finally, scroll to the bottom of the page and click Create
+        
+        - Once the job is submitted 
+          
+          <p align="center"><img src="images/image9.png" class="inline" width="700" height="350"/></p>
+
+        - Post the job is completed 
+          
+          <p align="center"><img src="images/image10.png" class="inline" width="700" height="350"/></p>
+          
+     - Let's verify the output from the S3 location provide under output section  
+     
+          <p align="center"><img src="images/image11.png" class="inline" width="700" height="250"/></p>
+          
+          <p align="center"><img src="images/image12.png" class="inline" width="700" height="250"/></p>
+ 
+     - At last we will export the job as a json file from the Job summary console so we can execute the same via Lambda in an automated fashion
+     
+          <p align="center"><img src="images/image13.png" class="inline" width="700" height="250"/></p>
 
   - Step 3: Automatation via AWS Lambda
-
+  
+    - Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/job_template.json">MediaConvert Job Template</a> from this link 
+    
+    - Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/VodLambdaConvert.py">Lambda code for MediaConvert Job</a> from this link  
+    
+    - 
