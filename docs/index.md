@@ -108,9 +108,7 @@
 
   - Step 3: Automatation via AWS Lambda
   
-    - Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/job_template.json">MediaConvert Job Template</a> from this link 
-      
-      **Note:** Update Queue and Role in the json. This Role should be same the IAMRoleForMediaConvert which we deloyed via Cloudformation stack under Prerequisite section
+    - Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/job_template.json">MediaConvert Job Template</a> from this link
     
     - Download the <a href="https://github.com/sanchitdilipjain/aws-elemental-mediaconvert/blob/main/MediConvert-Lambda.py">Lambda code for MediaConvert Job</a> from this link  
     
